@@ -15,7 +15,10 @@ let ppl = [{name: "Anthony", score: 10},
 console.log(countScores(ppl)); //=> { Anthony: 2, Fred: 10, Winnie: 12 }
 
 Example 2:
-let peeps = [
+
+console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
+***********************************************************************/
+let people = [
   {name: "Anthony", score: 2},
   {name: "Winnie", score: 2},
   {name: "Fred", score: 2},
@@ -24,12 +27,20 @@ let peeps = [
   {name: "Anthony", score: 2},
   {name: "Winnie", score: 2}
 ];
-console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
-***********************************************************************/
-
 function countScores(people) {
-  // Your code here
+  //create an object that create a key value pair of the value
+  let obj1 = {};
+  //iterate using a for in loop
+ for( let keys in people){
+  let char = people[keys];
+  console.log(char);
+  if(obj1.keys === undefined){
+    obj1[char];
+  }
+
+ }
 }
 
+console.log(countScores(people)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;
