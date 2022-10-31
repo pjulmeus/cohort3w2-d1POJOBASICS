@@ -11,12 +11,11 @@ valuePair(object1, object2, 'name'); // => [ 'One', 'Two' ]
 ***********************************************************************/
 
 function valuePair(obj1, obj2, key) {
-  for(keys in obj1){
-    let first = obj1[keys]
-    console.log(first);
+ let arr1 = [obj1[key], obj2[key]];
+ return arr1;
   }
 
-}
+
 
 let object1 = {name: 'One', location: 'NY', age: 3};
 let object2 = {name: 'Two', location: 'SF'};

@@ -15,6 +15,15 @@ let ppl = [{name: "Anthony", score: 10},
 console.log(countScores(ppl)); //=> { Anthony: 2, Fred: 10, Winnie: 12 }
 
 Example 2:
+let peeps = [
+  {name: "Anthony", score: 2},
+  {name: "Winnie", score: 2},
+  {name: "Fred", score: 2},
+  {name: "Winnie", score: 2},
+  {name: "Fred", score: 2},
+  {name: "Anthony", score: 2},
+  {name: "Winnie", score: 2}
+];
 
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
@@ -31,15 +40,21 @@ function countScores(people) {
   //create an object that create a key value pair of the value
   let obj1 = {};
   //iterate using a for in loop
- for( let keys in people){
-  let char = people[keys];
+ for( let i = 0; i < people.length; i++){
+  let char = people[i];
   console.log(char);
-  if(obj1.keys === undefined){
-    obj1[char];
-  }
+  console.log(char.score);
+  console.log(char.name);
+  if(obj1[char.name] === undefined){
+    obj1[char.name] = char.score;
 
- }
+  }else{
+    obj1[char.name] += char.score
+  }
 }
+  return obj1;
+ }
+
 
 console.log(countScores(people)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
